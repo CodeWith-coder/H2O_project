@@ -116,7 +116,6 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
    npm start
 
 
-
 ### Additional Notes
 - MongoDB Setup: Ensure MongoDB is running locally or connect to a cloud MongoDB instance. Use MongoDB Compass to inspect and manage your database.
 - Environment Variables: Create a .env file in the backend folder for environment-specific configurations such as database URIs, secret keys, and ports.
