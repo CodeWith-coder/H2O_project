@@ -125,8 +125,6 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
 ### Troubleshooting
 - If you encounter issues with dependencies, ensure that Node.js and npm are installed correctly.
 - Check MongoDB connection settings if the backend cannot connect to the database.
-- 
-
 
 
 
