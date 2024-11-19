@@ -47,6 +47,13 @@ Download and install MongoDB Compass, a GUI tool for interacting with MongoDB da
 Follow the installation steps provided on the official MongoDB website.
 
 
+
+### 3. Visual Studio Code
+
+Download and install Visual Studio Code, the recommended IDE for this project. (https://code.visualstudio.com/)
+
+
+
 ---
 
 ## Setup Instructions
@@ -58,11 +65,3 @@ Follow the installation steps provided on the official MongoDB website.
 3. Clone the repository using the following command:
    ```bash
    git clone <repository-url>
-
-
-
-
-### 3. Visual Studio Code
-
-Download and install Visual Studio Code, the recommended IDE for this project. (https://code.visualstudio.com/)
-
