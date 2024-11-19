@@ -1,5 +1,5 @@
 
-# Project Name
+# H2O Project
 
 A full-stack project with separate folders for the frontend and backend. This README provides detailed steps for setting up the project on your local machine using Visual Studio Code.
 
