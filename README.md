@@ -22,9 +22,8 @@ A full-stack project with separate folders for the frontend and backend. These s
 
 The repository is organized as follows:
 
-project-folder/ ├── frontend/ ├── backend/
-
-
+project-folder/  ├── backend/
+                 ├── frontend/
 
 ---
 
