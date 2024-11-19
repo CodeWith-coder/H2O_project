@@ -2,19 +2,34 @@ import styled from "styled-components";
 import bg from './img/bg.png';
 import {MainLayout} from './styles/Layouts';
 import Orb from './Components/Orb/Orb'
-import Navigation from './Components/Navigation/Navigation'
-import React, { useState, useMemo} from "react";
+import React, {  useMemo} from "react";
+//import React, { useState, useMemo} from "react";
+import Navigation from './Components/Navigation/Navigation';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Goal from './Components/Goal/Goal';
+import Water_usage from './Components/Water_usage/Water_usage';
+import { useGlobalContext } from "./context/globalContext";
 
 function App() {
   const [active, setActive] = React.useState(1)
 
+  const global = useGlobalContext()
+  console.log(global);
+
   const displayData = () => {
     switch(active){
       case 1: 
-        //return <Dashboard />
+        return <Dashboard />
+      case 2:
+        return <Dashboard />
+      case 3:
+        return <Goal />
+      case 4: 
+        return <Water_usage />
+      default: 
+        return <Dashboard />
 
     }
-
   }
 
 
@@ -52,7 +67,6 @@ const AppStyled = styled.div`
            &::-webkit-scrollbar{
              width: 0;
           }
-
       }
   `;
 
