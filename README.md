@@ -101,6 +101,7 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
    cd backend
 
 3. Start the backend server:
+   ```bash
    npm start
 
 #### Frontend
