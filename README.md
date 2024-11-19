@@ -65,3 +65,27 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
 3. Clone the repository using the following command:
    ```bash
    git clone <repository-url>
+
+### 2. Backend Setup
+
+1. Navigate to the `backend` folder:
+   ```bash
+   cd backend
+
+2. Initialize a Node.js project in the backend folder:
+   ```bash
+   npm init -y
+
+3. Install the necessary dependencies:
+   ```bash
+   npm install express mongoose cors nodemon dotenv
+
+### 3. Frontend Setup
+
+1. Navigate to the frontend folder:
+   ```bash
+   cd ../frontend
+
+2. To install the dependencies for the frontend folder
+   ```bash
+   npm install
