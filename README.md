@@ -63,7 +63,7 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
 2. Open the terminal (`Ctrl+` or View > Terminal).  
 3. Clone the repository using the following command:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:CodeWith-coder/H2O_project.git
 
 ### 2. Backend Setup
 
