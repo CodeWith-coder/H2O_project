@@ -15,7 +15,7 @@ const ExpenseSchema_WaterUsageSchema = new mongoose.Schema({
    },
    type: {
     type: String,
-    default: "shower"
+    default: "waterusage"
    
  }, 
  date: {

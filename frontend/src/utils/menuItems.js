@@ -1,4 +1,4 @@
-import {  dashboard, bullseye, faucet_drop, flowevent } from '../utils/icons'
+import {  dashboard, bullseye, faucet_drop, idea } from '../utils/icons'
 
 export const menuItems = [
     {
@@ -9,20 +9,20 @@ export const menuItems = [
     },
     {
         id: 2,
-        title: "Flow Event",
-        icon: flowevent,
+        title: "Water Usage",
+        icon: faucet_drop,
         link: "/dashboard",
     },
     {
         id: 3,
-        title: "Goal",
+        title: "Auqa Goal",
         icon: bullseye,
         link: "/dashboard",
     },
     {
         id: 4,
-        title: "WaterUsage",
-        icon: faucet_drop,
+        title: "Eco Water Guide",
+        icon: idea,
         link: "/dashboard",
     },
 ]

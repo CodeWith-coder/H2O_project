@@ -7,8 +7,8 @@ import Button from '../Button/Button';
 import { plus } from '../../utils/icons';
 
 
-function Form () {
-    const { addGoal, getGoal} = useGlobalContext()
+function WaterUsageForm () {
+    const { addWaterUsage} = useGlobalContext()
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -24,11 +24,9 @@ function Form () {
         //setError('')
     }
 
-    
-
     const handleSubmit = e => {
         e.preventDefault()
-        addGoal(inputState)
+        addWaterUsage(inputState)
         setInputState({
             title: '',
             amount: '',
@@ -38,47 +36,55 @@ function Form () {
         })
     }
 
-    return (
-    <FormSytled onSubmit={handleSubmit}>
-
-      <div className="selects input-control">
-            <select 
-                required 
-                value={title} // This binds the dropdown to the `title` state
-                name="title" 
-                id="title" 
-                onChange={handleInput('title')} // Update 'title' in your state
-            >
-                <option value="" disabled>Select the Goal</option>
-                <option value="Total Household Water Usage Goal">Total Household Water Usage Goal</option>
-                <option value="Bathroom Water-Saving Goal">Bathroom Water-Saving Goal</option>
-                <option value="Kitchen Water-Saving Goal">Kitchen Water-Saving Goal</option>
-                <option value="Laundry Water-Saving Goal">Laundry Water-Saving Goal</option>
-                <option value="Outdoor Water-Saving Goal">Outdoor Water-Saving Goal</option>
-                <option value="Leak-Prevention Goal">Leak-Prevention Goal</option>
-                <option value="Water-Saving Challenge Goal">Water-Saving Challenge Goal</option>
-                <option value="other">Other</option>
-            </select>
+    /*
+    <div className="input-control">
+            <input 
+            type="text" 
+            value={title}
+            name={'title'} 
+            placeholder="Water Usage Title"
+            onChange={handleInput('title')}
+            /> 
         </div>
+    */
 
-        <div className="selects input-control">
-                <select required 
-                    value={category} 
-                    name="category" 
-                    id="category" 
-                    onChange={handleInput('category')}>
-                    <option value=""  disabled >Select the Icon</option>
-                    <option value="total_household_water_usage_goal">Total Household Water Usage Goal</option>
-                    <option value="bathroom_water_saving_goal">Bathroom Water-Saving Goal</option>
-                    <option value="kitchen_water_saving_goal">Kitchen Water-Saving Goal</option>
-                    <option value="laundr_water_saving_goal">Laundry Water-Saving Goal</option>
-                    <option value="outdoor_water_saving_goal">Outdoor Water-Saving Goal</option>
-                    <option value="leak_prevention_goal">Leak-Prevention Goal</option>
-                    <option value="water_saving_challenge_goal">Water-Saving Challenge Goal</option>
+    return (
+    <WaterUsageFormSytled onSubmit={handleSubmit}>
+
+    <div className="selects input-control">
+                <select 
+                    required 
+                    value={title} // This binds the dropdown to the `title` state
+                    name="title" 
+                    id="title" 
+                    onChange={handleInput('title')} // Update 'title' in your state
+                >
+                    <option value="" disabled>Select the Water Usage</option>
+                    <option value="Total Household Water Usage">Total Household Water Usage</option>
+                    <option value="Bathroom Water Usage">Bathroom Water Usage</option>
+                    <option value="Kitchen Water Usage">Kitchen Water Usage</option>
+                    <option value="Laundry Water Usage">Laundry Water Usage</option>
+                    <option value="Outdoor Water Usage">Outdoor Water Usage</option>
+                    <option value="Water Loss Due to Leak">Water Loss Due to Leak</option>
+                    <option value="Behavioral and Habitual Water Usage">Behavioral and Habitual Water Usage</option>
                     <option value="other">Other</option>  
                 </select>
             </div>
 
+            <div className="selects input-control">
+                <select required value={category} name="category" id="category" onChange={handleInput('category')}>
+                    <option value=""  disabled >Select the Icon</option>
+                    <option value="total_household_water_usage">Total Household Water Usage</option>
+                    <option value="bathroom_water_usage">Bathroom Water Usage</option>
+                    <option value="kitchen_water_usage">Kitchen Water Usage</option>
+                    <option value="laundry_water_usage">Laundry Water Usage</option>
+                    <option value="outdoor_water_usage">Outdoor Water Usage</option>
+                    <option value="water_loss_due_to_leak">Water Loss Due to Leak</option>
+                    <option value="behavioral_and_habitual_water_usage">Behavioral and Habitual Water Usage</option>
+                    <option value="other">Other</option>  
+                </select>
+            </div>
+        
         <div className="input-control">
             <input value={amount}  
                 type="text" 
@@ -101,14 +107,15 @@ function Form () {
                 />
             </div>
 
-            
+           
+
             <div className="input-control">
                 <textarea name="description" value={description} placeholder='Add a Description' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
             </div>
 
             <div className="submit-btn">
             <Button 
-                    name={'Add the Goal'}
+                    name={'Add Water Usage'}
                     icon={plus}
                     bPad={'.8rem 1.6rem'}
                     bRad={'30px'}
@@ -118,11 +125,11 @@ function Form () {
             </div>
 
 
-    </FormSytled>
+    </WaterUsageFormSytled>
   )
 }
 
-const FormSytled = styled.form`
+const WaterUsageFormSytled = styled.form`
      display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -130,7 +137,7 @@ const FormSytled = styled.form`
         font-family: inherit;
         font-size: inherit;
         outline: none;
-        border: none;
+        border: none; 
         padding: .5rem 1rem;
         border-radius: 5px;
         border: 2px solid #fff;
@@ -151,7 +158,7 @@ const FormSytled = styled.form`
 
     .selects{
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
         select{
             color: rgba(34, 34, 96, 0.4);
             &:focus, &:active{
@@ -170,5 +177,5 @@ const FormSytled = styled.form`
     }
 `;
 
-export default Form
+export default WaterUsageForm
 

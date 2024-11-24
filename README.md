@@ -121,6 +121,8 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
 - Environment Variables: Create a .env file in the backend folder for environment-specific configurations such as database URIs, secret keys, and ports.
 - Simultaneous Servers: The backend and frontend servers should run concurrently for the project to function fully.
 
+- Icon resources: FONT AWESOME, the resource for icons and symbols can be usd in web and app development. https://fontawesome.com/search 
+
 
 ### Troubleshooting
 - If you encounter issues with dependencies, ensure that Node.js and npm are installed correctly.

@@ -7,8 +7,9 @@ import React, {  useMemo} from "react";
 import Navigation from './Components/Navigation/Navigation';
 import Dashboard from './Components/Dashboard/Dashboard';
 import Goal from './Components/Goal/Goal';
-import Water_usage from './Components/Water_usage/Water_usage';
+import WaterUsage from './Components/WaterUsage/WaterUsage';
 import { useGlobalContext } from "./context/globalContext";
+import EcoWaterGuide from "./Components/EcoWaterGuide/EcoWaterGuide";
 
 function App() {
   const [active, setActive] = React.useState(1)
@@ -21,11 +22,11 @@ function App() {
       case 1: 
         return <Dashboard />
       case 2:
-        return <Dashboard />
+        return <WaterUsage />
       case 3:
         return <Goal />
       case 4: 
-        return <Water_usage />
+        return <EcoWaterGuide/>
       default: 
         return <Dashboard />
 

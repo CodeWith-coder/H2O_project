@@ -2,27 +2,27 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { InnerLayout } from '../../styles/Layouts'
 import { useGlobalContext } from '../../context/globalContext'
-import Form from '../Form/Form'
 import Goalitem from '../Goalitem/Goalitem'
+import WaterUsageForm from './WaterUsageForm'
 
-function Goal() {
-   const {addGoal, goals, getGoal, deleteGoal, totalGoal} = useGlobalContext()
+function WaterUsage() {
+   const {addGoal, water_usages, getWaterUsage, deleteWaterUsage, totalWaterUsage} = useGlobalContext()
 
    useEffect(() => {
-      getGoal()
+        getWaterUsage()
    }, [])
 
   return (
-    <GoalStyled>
+    <WaterUsageStyled>
            <InnerLayout>
-                <h1>Aqua Goal</h1>
-                <h2 className="total-goal"> Keep Water Usage below: <span>{totalGoal()}</span>  gallons </h2>
+                <h1>Water Usage</h1>
+                <h2 className="total-goal"> Total Water Usage: <span>{totalWaterUsage()}</span>  gallons </h2>
                 <div className="goal-content">
                     <div className="form-container">
-                        <Form />
+                        <WaterUsageForm />
                     </div>
                     <div className="goals">
-                          {goals.map((goal_present) => {
+                          {water_usages.map((goal_present) => {
                             const {_id, title, amount, date, category, description, type} = goal_present;
                             return <Goalitem
                                 key={_id}
@@ -34,18 +34,18 @@ function Goal() {
                                 type={type}
                                 category={category} 
                                 indicatorColor="var(--color-green)"
-                                deleteItem={deleteGoal}
+                                deleteItem={deleteWaterUsage}
                             />
                           })}
 
                     </div>
                 </div>
           </InnerLayout>
-    </GoalStyled>
+    </WaterUsageStyled>
   )
 }
 
-const GoalStyled = styled.div`
+const WaterUsageStyled = styled.div`
    display: flex;
     overflow: auto;
     .total-goal{
@@ -78,4 +78,4 @@ const GoalStyled = styled.div`
 `;
 
 
-export default Goal;
+export default WaterUsage;
