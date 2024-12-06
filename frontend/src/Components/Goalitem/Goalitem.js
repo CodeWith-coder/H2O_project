@@ -75,7 +75,7 @@ function Goalitem({
             <h5>{title}</h5>
             <div className="inner-content">
                 <div className="text">
-                    <p>{handholdingdrop} {amount}</p>
+                    <p>{handholdingdrop} {amount}  Gallons </p>
                     <p>{calender} {dateFormat(date)}</p>
                     <p>
                         {comment}
@@ -130,9 +130,10 @@ const GoalItemStyled = styled.div`
 
     .content{
         flex: 1;
+        width: 480px;
         display: flex;
         flex-direction: column;
-        gap: .2rem;
+        gap: .5rem;
         h5{
             font-size: 1.3rem;
             padding-left: 2rem;

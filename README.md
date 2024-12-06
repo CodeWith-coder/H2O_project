@@ -79,15 +79,23 @@ Download and install Visual Studio Code, the recommended IDE for this project. (
    ```bash
    npm install express mongoose cors nodemon dotenv
 
+4. Install the latest necessary dependencies:
+   ```bash
+   npm install bcryptjs jsonwebtoken
+
 ### 3. Frontend Setup
 
-1. Navigate to the frontend folder:
-   ```bash
+1. Navigate to the `frontend` folder:
+   ```bashß
    cd ../frontend
 
 2. To install the dependencies for the frontend folder
    ```bash
    npm install
+
+3. Install the necessary dependencies:
+   ```bash
+   npm install react-router-dom antd
 
 ---
 ### Running the Project

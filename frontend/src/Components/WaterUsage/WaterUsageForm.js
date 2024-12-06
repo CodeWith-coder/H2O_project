@@ -65,7 +65,7 @@ function WaterUsageForm () {
                     <option value="Kitchen Water Usage">Kitchen Water Usage</option>
                     <option value="Laundry Water Usage">Laundry Water Usage</option>
                     <option value="Outdoor Water Usage">Outdoor Water Usage</option>
-                    <option value="Water Loss Due to Leak">Water Loss Due to Leak</option>
+                    <option value="Water Loss Due to Leak]">Water Loss Due to Leak</option>
                     <option value="Behavioral and Habitual Water Usage">Behavioral and Habitual Water Usage</option>
                     <option value="other">Other</option>  
                 </select>

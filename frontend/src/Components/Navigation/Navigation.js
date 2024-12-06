@@ -3,15 +3,25 @@ import styled from 'styled-components'
 import person from '../../img/person.png'
 import { menuItems } from '../../utils/menuItems'
 import { signout } from '../../utils/icons'
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../AuthContext/AuthContext';
+
 
 function Navigation({active, setActive}) {
+	const { logout } = useAuth(); 
+	const navigate = useNavigate(); // Initialize the useNavigate hookExtract logout from useAuth
+	const handleLogout = async () => {
+		await logout();
+		navigate('/login');
+	};
+
   return (
     <NavStyled>
         <div className="user-con">
             <img src={person} alt="" />
             <div className="text"> 
                 <h2>John</h2>
-                <p>Your Water usage</p>
+                <p>Your Water Usage</p>
             </div>
         </div>
         <ul className="menu-items">
@@ -28,7 +38,9 @@ function Navigation({active, setActive}) {
         </ul>
         <div className="bottom-nav">
             <li>
-                {signout} Sign Out
+			<button onClick={handleLogout} className='logout-btn'>
+						{signout} Sign Out
+					</button>
             </li>
         </div>
     </NavStyled>
@@ -110,6 +122,17 @@ const NavStyled = styled.nav`
             border-radius: 0 10px 10px 0;
         }
     }
+
+	.logout-btn {
+		background: none;
+		border: none;
+		color: inherit;
+		font-size: inherit;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+	}
 
 `;
 

@@ -46,10 +46,11 @@ function WaterUsage() {
 }
 
 const WaterUsageStyled = styled.div`
-   display: flex;
+    display: flex;
     overflow: auto;
     .total-goal{
         display: flex;
+        width: auto;
         justify-content: center;
         align-items: center;
         background: #FCF6F9;

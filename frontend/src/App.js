@@ -2,7 +2,7 @@ import styled from "styled-components";
 import bg from './img/bg.png';
 import {MainLayout} from './styles/Layouts';
 import Orb from './Components/Orb/Orb'
-import React, {  useMemo} from "react";
+import React, { useMemo } from "react";
 //import React, { useState, useMemo} from "react";
 import Navigation from './Components/Navigation/Navigation';
 import Dashboard from './Components/Dashboard/Dashboard';
@@ -11,7 +11,13 @@ import WaterUsage from './Components/WaterUsage/WaterUsage';
 import { useGlobalContext } from "./context/globalContext";
 import EcoWaterGuide from "./Components/EcoWaterGuide/EcoWaterGuide";
 
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import Register from "./Auth/Register";
+import Login from "./Auth/Login";
+import { useAuth } from './AuthContext/AuthContext.jsx';
+
 function App() {
+  const {isAuthenticated} = useAuth();
   const [active, setActive] = React.useState(1)
 
   const global = useGlobalContext()
@@ -40,16 +46,29 @@ function App() {
   
 
   return (
-    <AppStyled bg={bg} className="App">
+    <Router>
+    <AppStyled bg={bg} className='App'>
       {orbMemo}
-       <MainLayout>
-            <Navigation active={active} setActive={setActive}/>
-            <main>
-              {displayData()}
-            </main>
-        </MainLayout>
-    
+      <MainLayout>
+        <main>
+          <Routes>
+              <Route path='/' element={ <Register /> } />
+              <Route path='/login' element={ !isAuthenticated ? <Login /> : <Navigate to="/dashboard" replace />} />
+
+            <Route
+              path='/dashboard'
+              element={
+                <MainLayout>
+                  <Navigation active={active} setActive={setActive} />
+                  {displayData()}
+                </MainLayout>
+              }
+            />
+          </Routes>
+        </main>
+      </MainLayout>
     </AppStyled>
+  </Router>
   );
 }
 
@@ -72,3 +91,7 @@ const AppStyled = styled.div`
   `;
 
 export default App;
+
+
+//<Route path='/' element={ <Register /> } />
+//<Route path='/login2' element={ !isAuthenticated ? <Login /> : <Navigate to="/dashboard" replace />} />
