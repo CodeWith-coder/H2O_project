@@ -15,7 +15,7 @@ export const menuItems = [
     },
     {
         id: 3,
-        title: "Auqa Goal",
+        title: "Aqua Goal",
         icon: bullseye,
         link: "/dashboard",
     },

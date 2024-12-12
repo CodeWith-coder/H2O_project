@@ -6,11 +6,11 @@ import Goalitem from '../Goalitem/Goalitem'
 import WaterUsageForm from './WaterUsageForm'
 
 function WaterUsage() {
-   const {addGoal, water_usages, getWaterUsage, deleteWaterUsage, totalWaterUsage} = useGlobalContext()
+   const {addGoal, water_usages, getWaterUsage, deleteWaterUsage, totalWaterUsage, totalWaterUsageByCategory} = useGlobalContext()
 
    useEffect(() => {
         getWaterUsage()
-   }, [])
+   }, [getWaterUsage])
 
   return (
     <WaterUsageStyled>

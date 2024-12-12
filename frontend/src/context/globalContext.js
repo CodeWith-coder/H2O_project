@@ -73,7 +73,20 @@ export const GlobalProvider = ({children}) => {
         return totalGoal;
     }
 
+    const totalWaterUsageByCategory = () => {
+        return water_usages.reduce((acc, { category, amount }) => {
+            acc[category] = (acc[category] || 0) + amount;
+            return acc;
+        }, {});
+    };
 
+    const getGoalsByCategory = () => {
+        const goalsByCategory = goals.reduce((acc, goal) => {
+          acc[goal.category] = (acc[goal.category] || 0) + goal.amount;
+          return acc;
+        }, {});
+        return goalsByCategory;
+      };
 
 
     return (
@@ -88,7 +101,9 @@ export const GlobalProvider = ({children}) => {
             addWaterUsage,
             getWaterUsage,
             deleteWaterUsage,
-            totalWaterUsage
+            totalWaterUsage,
+            totalWaterUsageByCategory,
+            getGoalsByCategory
         }}>
             {children}
         </GlobalContext.Provider>

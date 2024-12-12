@@ -20,7 +20,7 @@ function Navigation({active, setActive}) {
         <div className="user-con">
             <img src={person} alt="" />
             <div className="text"> 
-                <h2>John</h2>
+                <h2></h2>
                 <p>Your Water Usage</p>
             </div>
         </div>

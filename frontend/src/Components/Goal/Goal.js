@@ -6,11 +6,15 @@ import Form from '../Form/Form'
 import Goalitem from '../Goalitem/Goalitem'
 
 function Goal() {
-   const {addGoal, goals, getGoal, deleteGoal, totalGoal} = useGlobalContext()
+   const {addGoal, goals, getGoal, deleteGoal, totalGoal, getGoalsByCategory} = useGlobalContext()
 
    useEffect(() => {
       getGoal()
-   }, [])
+   }, [getGoal])
+
+   const totalGallonsByCategory = getGoalsByCategory()
+
+
 
   return (
     <GoalStyled>
